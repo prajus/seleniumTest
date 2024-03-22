@@ -6,7 +6,13 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(features = "src//test//resources//Features"
 ,glue = "stepDefs",
 monochrome=true,
-plugin = {"pretty"}
+dryRun = false,
+plugin = {"pretty",
+		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+}
+		//"json:target\\JsonReport.json"
+//}
+		//"html:target\\HtmlReport.html"}
 )
 public class UserAuthTest extends AbstractTestNGCucumberTests {
 
