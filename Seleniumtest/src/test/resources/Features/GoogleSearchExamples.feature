@@ -9,7 +9,8 @@ Feature: Google Search
     Then I should see search results for "<title>"
     
     Examples:
-    | search keyword  | title                    |
-    | Java            | Java - Google Search     |
-    | TestNg          | TestNg - Google Search   |
-    | Cucumber        | Cucumber - Google Search |
+    | search keyword  | title                          |
+    | Java            | Java - Google Search           |
+    | TestNg          | TestNg - Google Search         |
+    | Cucumber        | Cucumber - Google Search       |
+    | Manual testing  | Manual testing - Google Search |
