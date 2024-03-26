@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import base.TestBase;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -13,14 +14,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class GoogleSearch {
-	WebDriver driver;
-	
-	@Before
-	public void setup() {
-		  driver = new ChromeDriver();
-	}
-	
-	 
+		
+	 WebDriver driver=TestBase.getDriver();
 	  
 	  @Given("I am on the Google search page") 
 	  public void  i_am_on_the_google_search_page() {
@@ -38,11 +33,9 @@ public class GoogleSearch {
 	  
 	  @Then("I should see search results for {string}") 
 	  public void  i_should_see_search_results_for(String Title) { String
-	  actualTitle=driver.getTitle(); Assert.assertEquals(actualTitle, Title); }
+	  actualTitle=driver.getTitle();
+	  Assert.assertEquals(actualTitle, Title); }
 	  
-	  @After
-	  public void tearDown() {
-		  driver.quit();
-	  }
+	 
 	 
 }
