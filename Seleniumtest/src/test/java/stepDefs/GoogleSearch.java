@@ -15,8 +15,8 @@ import io.cucumber.java.en.When;
 
 public class GoogleSearch {
 		
-	 WebDriver driver=TestBase.getDriver();
-	  
+	// WebDriver driver=TestBase.getDriver();
+	  WebDriver driver  =new ChromeDriver();
 	  @Given("I am on the Google search page") 
 	  public void  i_am_on_the_google_search_page() {
 	  

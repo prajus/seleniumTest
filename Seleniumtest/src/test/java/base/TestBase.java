@@ -36,9 +36,9 @@ public class TestBase {
 	}
 
 	public static void initDriver() {
-		if(testBase == null) {
+	//	if(testBase == null) {
 			testBase = new TestBase();
-		}
+	//	}
 	}
 
 	public static void tearDown() {

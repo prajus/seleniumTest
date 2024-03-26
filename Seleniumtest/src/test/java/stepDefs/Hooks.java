@@ -16,7 +16,7 @@ WebDriver driver;
 	
 	@Before
 	public void setup() {
-		 TestBase.initDriver();
+		// TestBase.initDriver();
 	}
 	
 	@After
@@ -26,7 +26,7 @@ WebDriver driver;
 			byte[] imgBytes = screen.getScreenshotAs(OutputType.BYTES);
 			scenario.attach(imgBytes, "image/png", "ScreenImage");
 		}
-		TestBase.tearDown();
+		//TestBase.tearDown();
 	}
 
 }
