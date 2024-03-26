@@ -41,5 +41,12 @@ public class TestBase {
 		}
 	}
 
+	public static void tearDown() {
+		if(driver!=null) {
+            driver.close();
+            driver.quit();
+       }
+      testBase = null;
+	}
 
 }
