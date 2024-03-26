@@ -16,18 +16,19 @@ import io.cucumber.java.en.When;
 import pages.GoogleSearchPageFactory;
 
 public class GoogleSearch {
-	WebDriver driver;
-	GoogleSearchPageFactory browser;
-	// WebDriver driver=TestBase.getDriver();
-	private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
-	@Before
-	public void setup() {
-		driver = new ChromeDriver();
-		webDriver.set(driver);
-	}
+	WebDriver driver;	
+	  
+	  GoogleSearchPageFactory browser;
+	/*
+	 * private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
+	 * 
+	 * @Before public void setup() { driver = new ChromeDriver();
+	 * webDriver.set(driver); }
+	 */
 
 	  @Given("I am on the Google search page") 
 	  public void  i_am_on_the_google_search_page() {
+		  driver=TestBase.getDriver();
 		   browser= new GoogleSearchPageFactory(driver);
 		   browser.NavigateGoogleSearchPage();
 	//  driver.get("https://www.google.com"); 
