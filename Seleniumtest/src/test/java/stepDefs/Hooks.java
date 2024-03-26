@@ -13,10 +13,11 @@ import io.cucumber.java.Scenario;
 public class Hooks {
 
 WebDriver driver;
-	
+private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 	@Before
 	public void setup() {
-		// TestBase.initDriver();
+	//	driver = new ChromeDriver();
+	//	webDriver.set(driver);
 	}
 	
 	@After

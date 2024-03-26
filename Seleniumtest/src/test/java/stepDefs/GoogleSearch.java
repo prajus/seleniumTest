@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
 import base.TestBase;
@@ -14,9 +15,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class GoogleSearch {
-		
+	WebDriver driver;
 	// WebDriver driver=TestBase.getDriver();
-	  WebDriver driver  =new ChromeDriver();
+	private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
+	@Before
+	public void setup() {
+		driver = new ChromeDriver();
+		webDriver.set(driver);
+	}
+
 	  @Given("I am on the Google search page") 
 	  public void  i_am_on_the_google_search_page() {
 	  
