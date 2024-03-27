@@ -13,20 +13,22 @@ import io.cucumber.java.Scenario;
 public class Hooks {
 
 WebDriver driver;
-	
+//private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 	@Before
 	public void setup() {
-		// TestBase.initDriver();
+	//	driver = new ChromeDriver();
+	//	webDriver.set(driver);
+	//	TestBase.initDriver();
 	}
 	
 	@After
 	public  void tearDown(Scenario scenario) {
-		if(scenario.isFailed()) {
-			TakesScreenshot screen = (TakesScreenshot)TestBase.getDriver();
-			byte[] imgBytes = screen.getScreenshotAs(OutputType.BYTES);
-			scenario.attach(imgBytes, "image/png", "ScreenImage");
+	//	if(scenario.isFailed()) {
+	//		TakesScreenshot screen = (TakesScreenshot)TestBase.getDriver();
+	//		byte[] imgBytes = screen.getScreenshotAs(OutputType.BYTES);
+	//		scenario.attach(imgBytes, "image/png", "ScreenImage");
 		}
-		//TestBase.tearDown();
-	}
+	//	TestBase.tearDown();
+	//}
 
 }
